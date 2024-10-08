@@ -1,0 +1,30 @@
+def get_user_choice(player_name):
+    """Get the choice from a player."""
+    while True:
+        user_input = input(f"{player_name}, choose rock, paper, scissors, lizard, or spock: ").lower()
+        if user_input in ["rock", "paper", "scissors", "lizard", "spock"]:
+            return user_input
+        else:
+            print("Invalid choice. Please enter one of: rock, paper, scissors, lizard, or spock.")
+
+def determine_winner(player1_choice, player2_choice):
+    """Determine the winner based on the choices."""
+    if player1_choice == player2_choice:
+        return "It's a tie!"
+    elif (
+        (player1_choice == "rock" and (player2_choice == "scissors" or player2_choice == "lizard"))
+        or (player1_choice == "paper" and (player2_choice == "rock" or player2_choice == "spock"))
+        or (player1_choice == "scissors" and (player2_choice == "paper" or player2_choice == "lizard"))
+        or (player1_choice == "lizard" and (player2_choice == "paper" or player2_choice == "spock"))
+        or (player1_choice == "spock" and (player2_choice == "rock" or player2_choice == "scissors"))
+    ):
+        return "Player 1 wins!"
+    else:
+        return "Player 2 wins!"
+
+# Get choices from both players
+player1_choice = get_user_choice("Player 1")
+player2_choice = get_user_choice("Player 2")
+
+# Determine the winner
+print(determine_winner(player1_choice, player2_choice))
