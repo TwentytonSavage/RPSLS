@@ -1,15 +1,18 @@
-def get_user_choice(player_name):
+# Remove the spaces from the file name
+# Include a header
+
+def get_user_choice(player_name):   # You receive the playerName but you return the playerMove -- NO.
     """Get the choice from a player."""
-    while True:
+    while True:    # You've left no way out of this loop
         user_input = input(f"{player_name}, choose rock, paper, scissors, lizard, or spock: ").lower()
         if user_input in ["rock", "paper", "scissors", "lizard", "spock"]:
-            return user_input
+            return user_input    # and no, this doesn't count - it's sloppy
         else:
             print("Invalid choice. Please enter one of: rock, paper, scissors, lizard, or spock.")
 
 def determine_winner(player1_choice, player2_choice):
     """Determine the winner based on the choices."""
-    if player1_choice == player2_choice:
+    if player1_choice == player2_choice:    # Remove the underscores from your variable names
         return "It's a tie!"
     elif (
         (player1_choice == "rock" and (player2_choice == "scissors" or player2_choice == "lizard"))
@@ -23,8 +26,12 @@ def determine_winner(player1_choice, player2_choice):
         return "Player 2 wins!"
 
 # Get choices from both players
+# I don't know which AI you used to write this but don't ever use that one again, it sucks...
 player1_choice = get_user_choice("Player 1")
 player2_choice = get_user_choice("Player 2")
 
 # Determine the winner
 print(determine_winner(player1_choice, player2_choice))
+
+# Where is your main method?
+# And why don't you ever call the two subroutines you've defined above?
