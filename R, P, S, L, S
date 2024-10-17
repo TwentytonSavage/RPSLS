@@ -1,6 +1,7 @@
-def get_user_choice(player_name):
+def getUserChoice(player_name):
     """Get the choice from a player."""
-    while True:
+    isPlaying = True
+    while isPlaying is True:
         user_input = input(f"{player_name}, choose rock, paper, scissors, lizard, or spock: ").lower()
         if user_input in ["rock", "paper", "scissors", "lizard", "spock"]:
             return user_input
